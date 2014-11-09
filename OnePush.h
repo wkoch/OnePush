@@ -1,7 +1,7 @@
 /*
-  OnePush.cpp - v0.1
+  OnePush.cpp - v1.0 - November 09, 2014.
   Library for doing many things with a single button.
-  Created by William Koch, November 08, 2014.
+  Created by William Koch.
   Released into the public domain.
 */
 
