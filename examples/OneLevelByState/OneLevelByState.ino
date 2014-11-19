@@ -14,6 +14,5 @@ void setup() {
 }
 
 void loop() {
-  myButton.update(); // Check the button state every update.
   digitalWrite(led, myButton.state()); // Write the state directly to the led.
 }

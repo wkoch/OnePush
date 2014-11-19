@@ -1,12 +1,14 @@
 /*
-  OnePush.cpp - v1.0 - November 09, 2014.
-  Library for doing many things with a single button.
+  OnePush - v1.0 - November 19, 2014.
+  Arduino library for doing many things with a single button.
   Created by William Koch.
   Released into the public domain.
 */
 
 #include "OnePush.h"
 #include "../Debounce/Debounce.h"
+
+#define BETWEEN(x, a, b)  ((a) <= (x) && (x) <= (b))
 
 // Creates an OnePush Object with 1 level.
 OnePush::OnePush(byte button)  : Debounce(button) {
@@ -32,10 +34,12 @@ void OnePush::update() {
 
 // Returns the current status, false for level 0, true otherwise.
 boolean OnePush::status() {
+  OnePush::update();
   return (_level == 0 ? false : true);
 }
 
 byte OnePush::state() {
+  OnePush::update();
   return OnePush::status() ? HIGH : LOW;
 }
 
@@ -45,8 +49,10 @@ byte OnePush::level() {
 }
 
 // Manually sets the level to any value from 0 up to levels.
-byte OnePush::set(byte number) {
-  number <= _levels ? _level = number : 0 ;
+byte OnePush::set(byte level) {
+  if (BETWEEN(level, 0, _levels)) {
+    _level = level;
+  }
   return _level;
 }
 

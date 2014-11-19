@@ -14,7 +14,6 @@ void setup() {
 }
 
 void loop() {
-  myButton.update(); // Check the button state every update.
   if (myButton.status()) { // Checks the button status to decide.
     digitalWrite(led, HIGH);
   } else {

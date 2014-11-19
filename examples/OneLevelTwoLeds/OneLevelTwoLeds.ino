@@ -17,7 +17,6 @@ void setup() {
 }
 
 void loop() {
-  myButton.update(); // Check the button state every update.
   digitalWrite(led1, myButton.state()); // Write the state directly to the led.
   if (myButton.count() > 0 && myButton.count() % 5 == 0) { // Every 5 presses.
     digitalWrite(led2, HIGH);
