@@ -1,11 +1,11 @@
 # Datatypes
 
-OnePush  KEYWORD1
+OnePush	KEYWORD1
 
 # Methods and Functions
 
-status   KEYWORD2
-state    KEYWORD2
-level    KEYWORD2
-set      KEYWORD2
-next     KEYWORD2
+status	KEYWORD2
+state	KEYWORD2
+level	KEYWORD2
+set	KEYWORD2
+next	KEYWORD2
